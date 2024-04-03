@@ -14,11 +14,14 @@ apply plugin: 'com.vanniktech.maven.publish'
 apply plugin: 'signing'
 
 group = 'io.github.constasj'
-version = '1.21.10'
+version = '1.21.10-1'
 
 repositories {
     mavenCentral()
 }
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
 
 import com.vanniktech.maven.publish.JavaLibrary
 import com.vanniktech.maven.publish.JavadocJar
@@ -52,7 +55,7 @@ mavenPublishing {
     configure(new JavaLibrary(new JavadocJar.Javadoc(), true))
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
     signAllPublications()
-    coordinates("io.github.constasj", "gitea-api", "1.21.10")
+    coordinates("io.github.constasj", "gitea-api", "1.21.10-1")
     pom {
         name = 'gitea-api'
         description = 'An auto-generated Gitea REST API library.'
